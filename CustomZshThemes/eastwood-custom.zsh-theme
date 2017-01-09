@@ -1,14 +1,5 @@
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-
-if [[ $UID -eq 0 ]]; then
-    local user_host='%n@%m'
-    local user_symbol='#'
-else
-    local user_host='%n@%m'
-    local user_symbol=''
-fi
-
 # RVM settings
 local rvm_ruby=''
 if which rvm-prompt &> /dev/null; then
@@ -28,6 +19,7 @@ else
   fi
 fi
 
+#github symbols for the prompt
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗ %{$reset_color%}"
