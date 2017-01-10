@@ -1,5 +1,14 @@
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
+
+if [[ $UID -eq 0 ]]; then
+    local user_host='%n@%m'
+    local user_symbol='#'
+else
+    local user_host='%n@%m'
+    local user_symbol=''
+fi
+
 # RVM settings
 local rvm_ruby=''
 if which rvm-prompt &> /dev/null; then
